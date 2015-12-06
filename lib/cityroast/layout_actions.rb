@@ -32,6 +32,11 @@ module Cityroast
     def create_common_css_assets
       remove_file 'app/assets/stylesheets/application.css'
       directory 'assets/stylesheets', 'app/assets/stylesheets', force: true
+      # add assets precompile path
+      append_to_file "config/initializers/assets.rb" do <<-RUBY
+        Rails.application.config.assets.precompile += %w( administration.js ckeditor.js select2tag.js select2tag.css administration.css ckeditor/*)
+      RUBY
+      end
     end
 
     def create_common_partial
@@ -44,8 +49,11 @@ module Cityroast
     end
 
     def create_baisc_admin
-      directory 'views/admin', 'app/views/administration', force: true
-      directory 'controllers/admin/admins.rb', 'app/controllers/administration/administrators', force: true
+      directory 'views/admin/admins', 'app/views/administration/administrators', force: true
+      directory 'views/admin/common', 'app/views/administration/common', force: true
+      template 'controllers/admin/admins.rb', 'app/controllers/administration/administrators_controller.rb', force: true
+      template 'controllers/admin.rb', 'app/controllers/administration_controller.rb', force: true
+      template 'helpers/admin_helper.rb', 'app/helpers/administration_helper.rb', force: true
     end
 
     def create_pages_files
