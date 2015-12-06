@@ -1,0 +1,36 @@
+# SQLite version 3.x
+default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/<%= app_name %>_dev.sqlite3
+
+test:
+  <<: *default
+  database: db/<%= app_name %>_test.sqlite3
+
+production:
+  <<: *default
+  database: db/<%= app_name %>_production.sqlite3
+
+# default: &default
+#   adapter: postgresql
+#   user: postgres
+#   password: ipassip
+#   pool: 5
+#   timeout: 5000
+
+# development:
+#   <<: *default
+#   database: <%= app_name %>_dev
+
+# test:
+#   <<: *default
+#   database: <%= app_name %>_test
+
+# production:
+#   <<: *default
+#   database: <%= app_name %>_production

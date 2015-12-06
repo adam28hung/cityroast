@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require File.expand_path(File.join('..', 'lib', 'cityroast', 'generators', 'app_generator'), File.dirname(__FILE__))
 require File.expand_path(File.join('..', 'lib', 'cityroast', 'actions'), File.dirname(__FILE__))
 require File.expand_path(File.join('..', 'lib', 'cityroast', 'layout_actions'), File.dirname(__FILE__))

@@ -1,0 +1,37 @@
+<%= content_for :sub_functions do %>
+<ul class="nav navbar-nav navbar-right">
+  <%= render 'functions' %>
+</ul>
+<% end %>
+
+<!-- <h2 class="sub-header">Section title</h2> -->
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th width='40%'>名稱</th>
+        <th width='40%'>Email</th>
+        <th width='20%'>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @administrators.each do | admin | %>
+      <tr>
+        <td>
+          <%= admin.name %>
+        </td>
+        <td>
+          <%= admin.email %>
+        </td>
+        <td>
+          <%= link_to "編輯", edit_administration_administrator_path(admin) %>|
+          <%= link_to '刪除', administration_administrator_path( admin ), :method => :delete, class: "delete", title: "刪除", data: { confirm: "是否確定刪除使用者#{admin.name}? 此動作無法復原。" } %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<hr>

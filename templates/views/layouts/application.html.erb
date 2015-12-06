@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../favicon.ico"> -->
 
-  <title>APP_NAME</title>
+  <%= display_meta_tags reverse:true %>
 
   <%= csrf_meta_tags %>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -28,9 +28,9 @@
   <%= render "common/footer" %>
   <hr>
   <!-- administration links <br> -->
-  <%# link_to 'Administration root', administration_authenticated_administrator_path %> <br>
-  <%# link_to 'Admin Login', new_administrator_session_path %> |
-  <%# link_to 'Admin Signup', new_administrator_registration_path %>
+  <%= link_to 'Administration root', administration_authenticated_administrator_path %> <br>
+  <%= link_to 'Admin Login', new_administrator_session_path %> |
+  <%= link_to 'Admin Signup', new_administrator_registration_path %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

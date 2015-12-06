@@ -1,0 +1,13 @@
+<%= simple_form_for([:administration, @administrator], :html => {:id =>'AdminForm'} ) do | f |%>
+  <%# f.error_notification %>
+
+  <div class="form-inputs">
+      <%= f.input :name, autofocus: true %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "送出" %>
+  </div>
+<% end %>

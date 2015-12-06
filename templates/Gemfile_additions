@@ -5,42 +5,39 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 
-# # i18n
-# gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
-#
-# # for application setting management
-# gem "figaro"
-#
-# # for admin
-# #gem 'devise'
-#
-# # for category
-# gem 'closure_tree'
-# gem 'acts-as-taggable-on', '~> 3.4'
-# gem "select2-rails"
-#
-# gem 'simple_form'
-# # for article
-# gem 'ckeditor'
-#
-# # file upload
-# gem 'carrierwave'
-# gem 'remotipart'
-# gem 'mini_magick'
-#
-# group :development, :test do
-#
-#   gem 'pg'
-#   gem 'thin'
-#   gem "better_errors"
-#   # gem 'annotate', github: 'ctran/annotate_models'
-#   gem "rspec"
-#   gem "rspec-rails"
-#   gem "factory_girl_rails"
-#   gem "shoulda-matchers"
-# end
-#
-# group :development do
-#   gem 'pry'
-#   gem 'pry-rails'
-# end
+gem 'simple_form'
+
+# for admin
+gem 'devise'
+
+# for application setting management
+gem "figaro"
+
+
+# for category
+gem 'closure_tree'
+gem 'acts-as-taggable-on', '~> 3.4'
+gem "select2-rails"
+
+# for article
+gem 'ckeditor'
+
+# file upload
+gem 'carrierwave'
+gem 'remotipart'
+gem 'mini_magick'
+
+# SEO
+gem 'meta-tags', github: 'kpumuk/meta-tags'
+
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'thin'
+  gem "better_errors"
+  gem 'annotate', github: 'ctran/annotate_models'
+  gem "rspec"
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "shoulda-matchers"
+end
